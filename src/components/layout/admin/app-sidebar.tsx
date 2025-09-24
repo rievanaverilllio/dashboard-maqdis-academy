@@ -13,11 +13,9 @@ import {
   IconFileWord,
   IconFolder,
   IconHelp,
-  IconListDetails,
   IconReport,
   IconSearch,
   IconSettings,
-  IconUsers,
 } from "@tabler/icons-react"
 
 import { NavAppsContent } from "@/components/layout/admin/nav-apps-content"

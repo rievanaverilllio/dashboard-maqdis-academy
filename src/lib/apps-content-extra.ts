@@ -8,13 +8,15 @@ import {
   IconSettings,
   IconCoin,
   IconCrown,
-  IconFlagCheck
+  IconFlagCheck,
 } from "@tabler/icons-react"
+import type { ComponentType } from "react"
+import type { IconProps } from "@tabler/icons-react"
 
 export interface ExtraAppsContentItem {
   name: string
   url: string
-  icon: React.ComponentType<any>
+  icon: ComponentType<IconProps>
 }
 
 export const extraAppsContentItems: ExtraAppsContentItem[] = [
