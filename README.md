@@ -29,19 +29,6 @@ Hosted di Vercel dengan konfigurasi build default Next.js (output standalone). J
 	```powershell
 	npm install
 	```
-3. (Opsional) Jalankan migrasi database bila diperlukan:
-	- Pastikan sudah menyiapkan database (PostgreSQL) dan menambahkan connection string di `.env.local` misal:
-	  ```env
-	  DATABASE_URL=postgres://user:password@host:5432/dbname
-	  ```
-	- Lalu jalankan:
-	  ```powershell
-	  npm run migrate
-	  ```
-	- Cek status migrasi:
-	  ```powershell
-	  npm run migrate:status
-	  ```
 4. Jalankan di mode pengembangan
 	```powershell
 	npm run dev
@@ -63,8 +50,6 @@ Hosted di Vercel dengan konfigurasi build default Next.js (output standalone). J
 - `build`: Build aplikasi untuk produksi
 - `start`: Menjalankan server produksi
 - `lint`: Menjalankan ESLint
-- `migrate`: Menjalankan migrasi database (script kustom `scripts/migrate.js up`)
-- `migrate:status`: Melihat status migrasi
 
 ## Konfigurasi & Berkas Penting
 
