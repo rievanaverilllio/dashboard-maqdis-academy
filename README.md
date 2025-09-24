@@ -2,6 +2,14 @@
 
 Aplikasi web e-commerce/landing untuk brand perhiasan maqdis, dibangun dengan Next.js (App Router), React, dan Tailwind CSS. Repository ini sudah menyiapkan struktur halaman landing, halaman produk dinamis, serta komponen layout reusable (Navbar, Footer, CartModal) dengan dukungan smooth scrolling (Lenis).
 
+## Deployment
+
+Environment produksi dapat diakses di:
+
+https://dashboard-maqdis.vercel.app
+
+Hosted di Vercel dengan konfigurasi build default Next.js (output standalone). Jika Anda melakukan fork dan ingin deploy ulang, cukup sambungkan repository ke Vercel dan pastikan versi Node diatur (auto-detect) serta install command `npm install` dan build command `npm run build`.
+
 ## Tech Stack
 
 - Next.js 15 (App Router)
@@ -16,38 +24,51 @@ Aplikasi web e-commerce/landing untuk brand perhiasan maqdis, dibangun dengan Ne
 
 ## Cara Menjalankan (Local)
 
-1. Instal dependensi
-   
-	 ```powershell
-	 npm install
-	 ```
-
-2. Jalankan di mode pengembangan
-   
-	 ```powershell
-	 npm run dev
-	 ```
-	 Aplikasi akan tersedia di http://localhost:3000.
-
-3. Build untuk produksi dan start
-   
-	 ```powershell
-	 npm run build
-	 npm run start
-	 ```
-
-4. Linting
-   
-	 ```powershell
-	 npm run lint
-	 ```
+1. Clone & masuk folder
+	```powershell
+	git clone <repo-url> maqdis-app
+	cd maqdis-app
+	```
+2. Instal dependensi
+	```powershell
+	npm install
+	```
+3. (Opsional) Jalankan migrasi database bila diperlukan:
+	- Pastikan sudah menyiapkan database (PostgreSQL) dan menambahkan connection string di `.env.local` misal:
+	  ```env
+	  DATABASE_URL=postgres://user:password@host:5432/dbname
+	  ```
+	- Lalu jalankan:
+	  ```powershell
+	  npm run migrate
+	  ```
+	- Cek status migrasi:
+	  ```powershell
+	  npm run migrate:status
+	  ```
+4. Jalankan di mode pengembangan
+	```powershell
+	npm run dev
+	```
+	Aplikasi tersedia di http://localhost:3000
+5. Build untuk produksi lalu start
+	```powershell
+	npm run build
+	npm run start
+	```
+6. Linting
+	```powershell
+	npm run lint
+	```
 
 ## Skrip NPM
 
-- dev: Menjalankan Next.js di mode pengembangan
-- build: Build aplikasi untuk produksi
-- start: Menjalankan server produksi
-- lint: Menjalankan ESLint
+- `dev`: Menjalankan Next.js di mode pengembangan
+- `build`: Build aplikasi untuk produksi
+- `start`: Menjalankan server produksi
+- `lint`: Menjalankan ESLint
+- `migrate`: Menjalankan migrasi database (script kustom `scripts/migrate.js up`)
+- `migrate:status`: Melihat status migrasi
 
 ## Struktur Proyek (ringkas)
 
