@@ -1,7 +1,3 @@
-# maqdis-app
-
-Aplikasi web e-commerce/landing untuk brand perhiasan maqdis, dibangun dengan Next.js (App Router), React, dan Tailwind CSS. Repository ini sudah menyiapkan struktur halaman landing, halaman produk dinamis, serta komponen layout reusable (Navbar, Footer, CartModal) dengan dukungan smooth scrolling (Lenis).
-
 ## Deployment
 
 Environment produksi dapat diakses di:
@@ -70,55 +66,12 @@ Hosted di Vercel dengan konfigurasi build default Next.js (output standalone). J
 - `migrate`: Menjalankan migrasi database (script kustom `scripts/migrate.js up`)
 - `migrate:status`: Melihat status migrasi
 
-## Struktur Proyek (ringkas)
-
-```
-src/
-	app/
-		(landing)/
-			(home)/page.tsx
-			blogs/ | category/ | contact-us/ | faq/ | our-story/ | shop/
-		(footer)/
-			changelog/ | licensing/ | privacy-policy/ | return-policy/ | terms-conditions/
-		(auth)/ (admin)/
-		product/[id]/page.tsx
-		layout.tsx | loading.tsx | not-found.tsx | globals.css
-	components/
-		layout/ (Navbar, Footer, CartModal, EmptySection)
-		section/landing/... (berbagai section untuk halaman)
-	hook/
-		LenisProvider.tsx
-	lib/
-		useLenisSmoothScroll.ts
-public/
-	assets gambar & ikon (logo, hero, partners, dsb.)
-```
-
-## Fitur Utama
-
-- Halaman landing multisection (home, blogs, category, contact-us, faq, our-story, shop)
-- Halaman produk dinamis: `/product/[id]`
-- Komponen layout reusable: Navbar, Footer, CartModal
-- Smooth scrolling via Lenis (provider + hook)
-- Tailwind CSS v4 untuk styling, utilitas responsif/accessible
-- Halaman `loading` dan `not-found` sesuai konvensi App Router
-
-## Styling & UI
-
-- Global style: `src/app/globals.css`
-- Utility-first dengan Tailwind v4; gunakan class utilitas untuk komposisi komponen UI
-- Animasi tambahan tersedia via `tw-animate-css`
-
 ## Konfigurasi & Berkas Penting
 
 - `next.config.ts` – konfigurasi Next.js
 - `tsconfig.json` – konfigurasi TypeScript
 - `eslint.config.mjs` – aturan linting
 - `postcss.config.mjs` – integrasi Tailwind v4
-
-## Environment Variables
-
-Untuk saat ini tidak ada variabel lingkungan wajib untuk menjalankan secara lokal. Jika nanti menambahkan API/auth, buat `.env.local` dan referensikan di `src/app/api` atau komponen terkait.
 
 ## Troubleshooting
 
